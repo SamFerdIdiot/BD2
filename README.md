@@ -1,19 +1,15 @@
-# BD2
+GET student id
 
-# 1. Запуск системы
-docker-compose up -d
+GET discipline курс
 
-# 2. Загрузка данных
-docker-compose exec app python study_api.py LOAD_CSV students.csv
+GET students курс
 
-# 3. Проверка данных
-docker-compose exec app python study_api.py GET_students 1
-docker-compose exec app python study_api.py GET_disciplines
+GET disciplines
 
-# 4. Добавление новых данных
-docker-compose exec app python study_api.py PUT_student "наталья орлова" 2
-docker-compose exec app python study_api.py PUT_discipline "философия" "Пятница" 1 2
+PUT student "имя" курс
 
-# 5. Проверка добавленных данных
-docker-compose exec app python study_api.py GET_students 2
-docker-compose exec app python study_api.py GET_discipline 2
+PUT discipline "название" "день" пара курс
+
+DELETE student id
+
+DELETE discipline id
